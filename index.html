@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aybike & Mehmet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    margin:0;
+    padding:30px 15px;
+    font-family:Poppins,sans-serif;
+    background:
+    linear-gradient(rgba(247,242,235,.95),rgba(247,242,235,.95)),
+    url("flowers.png") center/cover fixed;
+    display:flex;
+    justify-content:center;
+    color:#5f4834;
+}
+.card{
+    max-width:480px;
+    width:100%;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-radius:28px;
+    padding:38px 30px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08),
+        0 0 0 1px rgba(168,130,82,.15);
+    position:relative;
+    overflow:hidden;
+}
+.names{
+font-family:"Cormorant Garamond",serif;
+font-size:34px;
+font-weight:600;
+text-align:center;
+opacity:0;
+transform:translateY(20px);
+animation:fade .9s forwards;
+}
+.subtitle{
+text-align:center;
+margin:18px 0 30px;
+line-height:1.8;
+color:#7b6958;
+opacity:0;
+animation:fade .9s .3s forwards;
+}
+.event{
+border:1px solid #eadfce;
+border-radius:18px;
+padding:20px;
+margin-bottom:18px;
+opacity:0;
+transform:translateY(20px);
+animation:fade .9s forwards;
+}
+.event:nth-of-type(1){animation-delay:.6s}
+.event:nth-of-type(2){animation-delay:.9s}
+.event h2{
+font-family:"Cormorant Garamond",serif;
+font-size:28px;
+margin-bottom:12px;
+}
+.button{
+    display:block;
+    margin-top:18px;
+    background:#A88252;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:50px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(168,130,82,.35);
+}
+.music{
+position:fixed;
+top:18px;
+right:18px;
+width:56px;height:56px;
+border:none;
+border-radius:50%;
+background:#a88252;
+color:#fff;
+font-size:24px;
+cursor:pointer;
+}
+.bottom{
+margin-top:26px;
+text-align:center;
+font-family:"Cormorant Garamond",serif;
+font-size:22px;
+line-height:1.8;
+color:#8c6b43;
+opacity:0;
+animation:fade .9s 1.2s forwards;
+}
+@keyframes fade{
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<button class="music" onclick="toggleMusic()">🎵</button>
+
+<audio id="music" loop>
+<source src="eyluldegel.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<div class="names">Aybike &amp; Mehmet</div>
+
+<div class="subtitle">
+Mutluluğumuza ortak olduğunuz için teşekkür ederiz.<br>
+Lütfen katılacağınız etkinliğin konumunu seçiniz.
+</div>
+
+<div class="event">
+<h2>🪭 Kına Gecesi</h2>
+<p><strong>5 Eylül 2026 Cumartesi</strong><br>19.00<br><br>📍 Lusso Wedding</p>
+<a class="button" target="_blank" href="https://maps.app.goo.gl/WKgD2gEesUMBnsSy6?g_st=ic">Konumu Aç</a>
+</div>
+
+<div class="event">
+<h2>💍 Nikâh Töreni</h2>
+<p><strong>12 Eylül 2026 Cumartesi</strong><br>15.30<br><br>📍 Osmangazi Gösteri Merkezi ve Nikâhevi</p>
+<a class="button" target="_blank" href="https://maps.app.goo.gl/gmgaU4693k7Mtmq19?g_st=ic">Konumu Aç</a>
+</div>
+
+<div class="bottom">
+<b>Bir Eylül gününde...</b><br><br>
+Sevdamızı sonsuzluğa taşıdığımız bu özel günde,<br>
+sizleri de aramızda görmekten mutluluk duyarız.<br><br>
+<b>Aybike &amp; Mehmet</b>
+</div>
+
+</div>
+
+<script>
+const audio=document.getElementById('music');
+const btn=document.querySelector('.music');
+let playing=false;
+function toggleMusic(){
+ if(playing){
+   audio.pause();
+   btn.textContent='🎵';
+ }else{
+   audio.play();
+   btn.textContent='🔇';
+ }
+ playing=!playing;
+}
+</script>
+
+</body>
+</html>
